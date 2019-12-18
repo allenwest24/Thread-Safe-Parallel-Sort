@@ -1,0 +1,19 @@
+1. Operating systems and number of processors:
+ - Personal: Debian, 4.
+ - School: ???, 12?.
+
+2. Data:
+ - Personal: 
+    - 1 thread average: 1m8.896s -> parallel speedup = (68.896s/68.896s) = 1
+    - 4 thread average: 0m49.089s -> parrallel speedup = (68.896s/49.089s) = 1.404
+    - 8 thread average: 0m49.448s -> parallel speedup = (68.896s/49.448s) = 1.393
+
+ - School:
+    - 1 thread average: 1m37.400s -> parallel speedup = (97.400s/97.400s) = 1
+    - 4 thread average: 1m11.040s -> parrallel speedup = (97.400s/71.040s) = 1.371
+    - 8 thread average: 1m3.166s -> parallel speedup = (97.400s/63.166s) = 1.542
+
+3. Explanation:
+
+As we used more threads, the sorting occured faster. We can attribute this to the amount of work being done simultaneously. They all took about the same time to divide the data into its respective amounts of groups, but from that point forward, the process sped up. On my personal computer, since I only have four core processors, no matter how many threads we put, it will never be faster than what it was for four threads. This is because it can no longer split up the work to different processors to do work simultaneously. On the school's server, however, this was not the case because they had more processors to use, thus giving us an even faster time for the 8 threads. This all makes logical sense and points to the code properly working. I was unable to finish the mmap version in last project so I can't compare to it other than I would expect the results to be rather similair. Since most of the work is being done in dividing up the work, this wouldn't be drastically different with 50,000,000 sets of floats.
+
